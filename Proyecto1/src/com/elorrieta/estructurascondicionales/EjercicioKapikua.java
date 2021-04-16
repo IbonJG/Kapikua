@@ -22,8 +22,6 @@ public class EjercicioKapikua {
 			inverso = inverso * 10 + resto;
 			numero = numero / 10;
 		}
-
-		// TODO depurar y solucionar bug
 		if (numeroOriginal == inverso) {
 			System.out.println("Es kapikua");
 		} else {
