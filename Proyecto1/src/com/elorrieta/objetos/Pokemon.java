@@ -18,6 +18,17 @@ public class Pokemon {
 
 	}
 
+	public Pokemon(String nombre, float precio) {
+		this();
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+
+	public Pokemon(String nombre) {
+		this();
+		this.nombre = nombre;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -27,11 +38,21 @@ public class Pokemon {
 	}
 
 	public float getPrecio() {
-		return precio;
+		if (isBrillante) {
+			return precio + 20;
+		} else {
+			return precio;
+		}
 	}
 
 	public void setPrecio(float precio) {
-		this.precio = precio;
+
+		if (precio < 0) {
+			this.precio = 0;
+
+		} else {
+			this.precio = precio;
+		}
 	}
 
 	public int getNumero() {
@@ -46,13 +67,13 @@ public class Pokemon {
 		return isBrillante;
 	}
 
-	public void setBrillante(boolean isBrillante) {
+	public void setIsBrillante(boolean isBrillante) {
 		this.isBrillante = isBrillante;
 	}
 
 	@Override
 	public String toString() {
-		return "Pokemon [nombre=" + nombre + ", precio=" + precio + ", numero=" + numero + ", isBrillante="
+		return "Pokemon [nombre=" + this.nombre + ", precio=" + getPrecio() + ", numero=" + numero + ", isBrillante="
 				+ isBrillante + "]";
 	}
 

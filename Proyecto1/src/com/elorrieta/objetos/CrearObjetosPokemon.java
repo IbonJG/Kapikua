@@ -43,23 +43,45 @@ public class CrearObjetosPokemon {
 		p1.setNombre(nombre);
 
 		System.out.println("Introduce precio");
-		float precio = teclado.nextFloat();
+		float precio = Float.parseFloat(teclado.nextLine());
 		p1.setPrecio(precio);
 
 		System.out.println("Introduce numero");
-		int numero = teclado.nextInt();
+		int numero = Integer.parseInt(teclado.nextLine());
 		p1.setNumero(numero);
 
 		System.out.println("¿ Es brillante ?  SI o NO");
 		// boolean isBrillante
-		String esBrillante = teclado.nextLine();
-		if ("SI".equalsIgnoreCase(esBrillante)) {
-			p1.setBrillante(true);
-		} else {
-			p1.setBrillante(false);
-		}
+		boolean isBrillante;
 
+		String respuesta = teclado.nextLine();
+		if ("SI".equalsIgnoreCase(respuesta) || "S".equalsIgnoreCase(respuesta)) {
+			isBrillante = true;
+		} else {
+			isBrillante = false;
+		}
+		p1.setIsBrillante(isBrillante);
+
+		System.out.println("Este es tu nuevo pokemon");
 		System.out.println(p1.toString());
+
+		if (p1.isBrillante()) {
+			System.out.println("Como es brillante vale mas");
+
+		}
+////		 crear el pokemon
+////		Pokemon pCustom = new Pokemon();
+//		pCustom.setNombre(nombre);
+//		pCustom.setPrecio(precio);
+//		pCustom.setNumero(numero);
+//		pCustom.setBrillante(isBrillante);
+//
+//		// mostrar por pantalla
+//		System.out.println("Ya tienes tu nuevo Pokemon customizado");
+//		System.out.println(pCustom);
+//		if (pCustom.isBrillante()) {
+//			System.out.println("Como es brillante el precio es " + pCustom.getPrecio());
+//		}
 
 		// charmander
 
