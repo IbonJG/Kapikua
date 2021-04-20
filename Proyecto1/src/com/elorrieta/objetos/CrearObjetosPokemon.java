@@ -14,7 +14,12 @@ public class CrearObjetosPokemon {
 		System.out.println("--------------------------------------");
 		c1.setNombre("Enter SandMan");
 		c1.setGrupo("Metallica");
-		c1.setDuracion(46);
+		try {
+			c1.setDuracion(46);
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		System.out.println(c1.toString());
 
 		System.out.println("--------------------------------------");
@@ -22,7 +27,12 @@ public class CrearObjetosPokemon {
 		Cancion c2 = new Cancion();
 		c2.setNombre("Cuando nada vale nada");
 		c2.setGrupo("Soziedad Alkoholika");
-		c2.setDuracion(248);
+		try {
+			c2.setDuracion(248);
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		System.out.println(c2.toString());
 
 		System.out.println("--------------------------------------");
@@ -30,7 +40,12 @@ public class CrearObjetosPokemon {
 		Cancion c3 = new Cancion();
 		c3.setNombre("Okupados");
 		c3.setGrupo("Piperrak");
-		c3.setDuracion(196);
+		try {
+			c3.setDuracion(196);
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		System.out.println(c3.toString());
 
 		System.out.println("-----------POKEMON----------");
@@ -56,7 +71,11 @@ public class CrearObjetosPokemon {
 			}
 			contadorprecio++;
 		} while (precio <= 0);
-		p1.setPrecio(precio);
+		try {
+			p1.setPrecio(precio);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 
 		int numero = 0;
 		int contadornumero = 1;
