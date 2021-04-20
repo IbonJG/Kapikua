@@ -35,19 +35,44 @@ public class CrearObjetosPokemon {
 
 		System.out.println("-----------POKEMON----------");
 		// vamos a crear objetos o instancias. un pokemon seria un objeto
-		// pikachu
 		Pokemon p1 = new Pokemon();
 
 		System.out.println("Introduce nombre");
 		String nombre = teclado.nextLine();
 		p1.setNombre(nombre);
 
-		System.out.println("Introduce precio");
-		float precio = Float.parseFloat(teclado.nextLine());
+		float precio = 0;
+		int contadorprecio = 1;
+
+		do {
+			System.out.println("Introduce precio");
+			try {
+				precio = Float.parseFloat(teclado.nextLine());
+			} catch (Exception e) {
+				if (contadorprecio < 3) {
+					System.out.println(" Formato incorrecto Debes introducir el precio en numeros");
+				} else
+					System.out.println("ATENCION HAS METIDO MAL YA " + contadorprecio + " veces");
+			}
+			contadorprecio++;
+		} while (precio <= 0);
 		p1.setPrecio(precio);
 
-		System.out.println("Introduce numero");
-		int numero = Integer.parseInt(teclado.nextLine());
+		int numero = 0;
+		int contadornumero = 1;
+
+		do {
+			System.out.println("Introduce numero");
+			try {
+				numero = Integer.parseInt(teclado.nextLine());
+			} catch (Exception e) {
+				if (contadornumero < 3) {
+					System.out.println("Formato incorrecto");
+				} else
+					System.out.println("PRESTA ATENCION. HAS METIDO MAL EL NUMERO " + contadornumero + " veces");
+			}
+			contadornumero++;
+		} while (numero <= 0);
 		p1.setNumero(numero);
 
 		System.out.println("¿ Es brillante ?  SI o NO");
@@ -66,7 +91,7 @@ public class CrearObjetosPokemon {
 		System.out.println(p1.toString());
 
 		if (p1.isBrillante()) {
-			System.out.println("Como es brillante vale mas");
+			System.out.println("Como es brillante vale 20 mas");
 
 		}
 ////		 crear el pokemon

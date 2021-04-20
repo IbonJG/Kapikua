@@ -45,10 +45,16 @@ public class Pokemon {
 		}
 	}
 
-	public void setPrecio(float precio) {
+	/**
+	 * Setea el precio
+	 * 
+	 * @param precio float en euros
+	 * @throws Exception si el precio < 0
+	 */
+	public void setPrecio(float precio) throws Exception {
 
 		if (precio < 0) {
-			this.precio = 0;
+			throw new Exception("El precio debe ser 0 o superior");
 
 		} else {
 			this.precio = precio;

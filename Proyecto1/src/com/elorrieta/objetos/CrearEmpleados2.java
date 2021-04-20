@@ -2,7 +2,7 @@ package com.elorrieta.objetos;
 
 import java.util.Scanner;
 
-public class CrearEmpleados {
+public class CrearEmpleados2 {
 
 	/**
 	 * hay que crear empleados atributos nombre y sueldo hay que crear un
@@ -59,6 +59,7 @@ public class CrearEmpleados {
 					System.out.println("Formato no correcto o precio inferior al debido");
 				}
 			} while (sueldo < Empleado.SUELDO_MINIMO);
+			// TODO Hacer las dos excepciones por separado
 			/**
 			 * { System.out.println("El sueldo debe ser mayor que 600, escribelo de nuevo");
 			 * sueldo = Float.parseFloat(teclado.nextLine()); }

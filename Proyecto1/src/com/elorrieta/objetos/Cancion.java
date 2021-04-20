@@ -34,6 +34,8 @@ public class Cancion {
 		return duracion;
 	}
 
+	// si tiene mas de 400 debe saltar una excepcion indicando que es una cancion
+	// muy larga
 	public void setDuracion(int duracion) {
 		this.duracion = duracion;
 	}
