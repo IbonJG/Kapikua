@@ -21,6 +21,7 @@ public class Ejercicio82 {
 			System.out.println("No se puede dividir por cero");
 		}
 
+		teclado.close();
 	}
 
 }
