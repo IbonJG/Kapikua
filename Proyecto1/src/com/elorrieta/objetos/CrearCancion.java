@@ -11,30 +11,30 @@ public class CrearCancion {
 		// Aqui se van a ir guardando todas las canciones
 		Cancion c1 = new Cancion();
 		// Empezamos a construir una cancion
+		// Nombre
 		System.out.println("Introduce nombre");
 		String nombre = teclado.nextLine();
 		c1.setNombre(nombre);
-
+		// Grupo
 		System.out.println("Introduce quien es el autor");
 		String grupo = teclado.nextLine();
 		c1.setGrupo(grupo);
 
-		// int duracionmax = 0;
-		int duracion = 0;
+		// Duracion
+		System.out.println("Introduce la duracion en segundos");
+		boolean repetir = true;
+		int duracion;
 		do {
-			System.out.println("Introduce la duracion en segundos");
 			try {
-				int duracion = Integer.parseInt(teclado.nextLine());
+				duracion = Integer.parseInt(teclado.nextLine());
+				c1.setDuracion(duracion);
+				repetir = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Duracion incorrecta, debe de ser un numero entero");
 			} catch (Exception e) {
 				System.out.println("Cancion demasiado larga");
 			}
-		} while (duracion > duracionmax);
-
-		try {
-			c1.setDuracion(duracion);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		} while (repetir);
 
 		// Mostramos lo que hemos hecho
 		System.out.println("Has añadido esta cancion");

@@ -2,26 +2,18 @@ package com.elorrieta.objetos;
 
 public class Cancion {
 
+	public static final int DURACION_MAXIMA = 400;
+	public static final int DURACION_MIN = 0;
 	// atributos
 	private String nombre;
 	private String grupo;
 	private int duracion;// en segundos
-	private int duracionmax = 400;
 
 	public Cancion() {
 		super();
 		this.nombre = "";
 		this.grupo = "anonimo";
 		this.duracion = 0;
-		this.duracionmax = 400;
-	}
-
-	public int getDuracionmax() {
-		return duracionmax;
-	}
-
-	public void setDuracionmax(int duracionmax) {
-		this.duracionmax = duracionmax;
 	}
 
 	public String getNombre() {
@@ -48,8 +40,8 @@ public class Cancion {
 	// muy larga
 	public void setDuracion(int duracion) throws Exception {
 
-		if (duracion > duracionmax) {
-			throw new Exception("Cancion demasiado larga. Maximo 400 segundos");
+		if (duracion >= DURACION_MAXIMA || duracion < DURACION_MIN) {
+			throw new Exception("La duracion debe ser entre " + DURACION_MIN + " y " + DURACION_MAXIMA);
 		} else {
 			this.duracion = duracion;
 		}
@@ -57,7 +49,7 @@ public class Cancion {
 
 	@Override
 	public String toString() {
-		return "Cancion [nombre= " + nombre + ", grupo= " + grupo + ", duracion= " + duracion + " seg]";
+		return "Cancion [nombre= " + nombre + ", grupo= " + grupo + ", duracion= " + duracion + "seg]";
 	}
 
 }
