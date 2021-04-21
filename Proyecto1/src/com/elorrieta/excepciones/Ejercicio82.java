@@ -9,9 +9,9 @@ public class Ejercicio82 {
 		Scanner teclado = new Scanner(System.in);
 		try {
 			int num1, num2;
-			System.out.print("Ingrese primer valor entero (dividendo):");
-			num1 = Integer.parseInt(teclado.nextLine())
-			System.out.print("Ingrese segundo valor entero (divisor):");
+			System.out.println("Ingrese primer valor entero (dividendo):");
+			num1 = Integer.parseInt(teclado.nextLine());
+			System.out.println("Ingrese segundo valor entero (divisor):");
 			num2 = teclado.nextInt();
 			int resu = num1 / num2;
 			System.out.print("La división de " + num1 + " / " + num2 + " es " + resu);
