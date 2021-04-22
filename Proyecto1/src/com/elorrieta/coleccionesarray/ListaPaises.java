@@ -1,4 +1,4 @@
-package com.elorrieta.colecciones;
+package com.elorrieta.coleccionesarray;
 
 import java.util.ArrayList;
 

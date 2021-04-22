@@ -1,4 +1,4 @@
-package com.elorrieta.colecciones;
+package com.elorrieta.coleccionesarray;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -35,13 +35,11 @@ public class EjercicioTemperaturas {
 		System.out.println("Has salido del programa");
 
 		// recorrer y mostar el array
-
 		System.out.println("----MOSTRAR ARRAY----");
 		for (Integer mostrartemp : temperaturas) {
 			System.out.println(mostrartemp);
 			// Sumar las diferentes temperaturas
-			sumatotaltemp = sumatotaltemp + mostrartemp;
-			// sumatotaltemp += mostrartemp;
+			sumatotaltemp = sumatotaltemp + mostrartemp; // sumatotaltemp += mostrartemp;
 		}
 		System.out.println("----------------------------------------");
 		System.out.println("Numero total de temperaturas metidas = " + numerototaltemp);

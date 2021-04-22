@@ -1,4 +1,4 @@
-package com.elorrieta.colecciones;
+package com.elorrieta.coleccionesarray;
 
 public class prueba {
 

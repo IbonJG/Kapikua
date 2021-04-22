@@ -36,14 +36,20 @@ public class Cancion {
 		return duracion;
 	}
 
+	public void setDuracion(int minutos, int segundos) throws Exception {
+
+		int total = (minutos * 60) + segundos;
+		setDuracion(total);
+	}
+
 	// si tiene mas de 400 debe saltar una excepcion indicando que es una cancion
 	// muy larga
-	public void setDuracion(int duracion) throws Exception {
+	public void setDuracion(int segundos) throws Exception {
 
-		if (duracion >= DURACION_MAXIMA || duracion < DURACION_MIN) {
+		if (segundos > DURACION_MAXIMA || segundos < DURACION_MIN) {
 			throw new Exception("La duracion debe ser entre " + DURACION_MIN + " y " + DURACION_MAXIMA);
 		} else {
-			this.duracion = duracion;
+			this.duracion = segundos;
 		}
 	}
 

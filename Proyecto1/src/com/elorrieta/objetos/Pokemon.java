@@ -29,6 +29,13 @@ public class Pokemon {
 		this.nombre = nombre;
 	}
 
+	public Pokemon(String nombre, float precio, boolean isBrillante) {
+		this();
+		this.nombre = nombre;
+		this.precio = precio;
+		this.isBrillante = isBrillante;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
