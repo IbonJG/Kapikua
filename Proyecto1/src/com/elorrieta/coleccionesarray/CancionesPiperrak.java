@@ -37,7 +37,7 @@ public class CancionesPiperrak {
 
 		c = new Cancion();
 		c.setNombre("AJOIOUN");
-		c.setDuracion(0, 15);
+		c.setDuracion(2, 15);
 		canciones.add(c);
 
 		System.out.println(canciones);
@@ -58,7 +58,6 @@ public class CancionesPiperrak {
 				cMasLarga = cancion;
 			}
 
-			// BUG cuidado duracion 0 nunca se va a actualizar
 			if (duracionMasCorta > duracionActual) {
 				cMasCorta = cancion;
 			}
@@ -67,8 +66,10 @@ public class CancionesPiperrak {
 
 		System.out.println("Total segundos: " + totalSegundos);
 		System.out.println("Media segundos: " + totalSegundos / canciones.size());
-		System.out.println("Cancion mas Larga: " + cMasLarga.getNombre() + " " + cMasLarga.getDuracion() + " seg");
-		System.out.println("Cancion mas Corta: " + cMasCorta.getNombre() + " " + cMasCorta.getDuracion() + " seg");
+		System.out.println(
+				"Cancion mas Larga: " + cMasLarga.getNombre() + " " + cMasLarga.getDuracionFormateada() + " seg");
+		System.out.println(
+				"Cancion mas Corta: " + cMasCorta.getNombre() + " " + cMasCorta.getDuracionFormateada() + " seg");
 
 	}
 

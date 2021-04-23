@@ -2,11 +2,21 @@ package com.elorrieta.coleccionesarray;
 
 import java.util.ArrayList;
 
+import com.elorrieta.objetos.Empleado;
 import com.elorrieta.objetos.Pokemon;
 
 public class CrearPokemon {
 
 	public static void main(String[] args) throws Exception {
+
+		// TIPO nombreVariable = inicializa
+		int con = 8;
+		boolean salir = false;
+		String nombre = "ibon";
+		Pokemon p = new Pokemon();
+		ArrayList<Pokemon> coleccion = new ArrayList<Pokemon>();
+		ArrayList<Empleado> colep = new ArrayList<Empleado>();
+		ArrayList<String> manolo = new ArrayList<String>();
 
 		ArrayList<Pokemon> lista = new ArrayList<Pokemon>();
 		int totalPrecio = 0;
@@ -72,12 +82,17 @@ public class CrearPokemon {
 			if (pokemonMasBarato > precioActual) {
 				pMasBarato = pokemon;
 			}
+			// brillantes
+			// if () {
+
+			// }
 		}
 		System.out.println(
 				"El pokemon mas caro es: " + pMasCaro.getNombre() + " con un valor de: " + pMasCaro.getPrecio());
 		System.out.println(
 				"El pokemon mas barato es: " + pMasBarato.getNombre() + " con una valor de: " + pMasBarato.getPrecio());
 		System.out.println("El valor total de tus Pokemon es: " + totalPrecio);
+		System.out.println("El valor medio de tus pokemon es: " + totalPrecio / lista.size());
 		// Mostrar los que son brillantes
 		for (Pokemon pokemon : lista) {
 
