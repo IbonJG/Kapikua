@@ -3,6 +3,7 @@ package com.elorrieta.objetos;
 public class Pokemon {
 
 	// definir atributos de los pokemon
+	private int id;
 	private String nombre;
 	private float precio;
 	private int numero;
@@ -11,10 +12,11 @@ public class Pokemon {
 	// contructor
 	public Pokemon() {
 		super();
-		nombre = "Sin nombre";
-		precio = 0;
-		numero = 0;
-		isBrillante = false;
+		this.id = 0;
+		this.nombre = "Sin nombre";
+		this.precio = 0;
+		this.numero = 0;
+		this.isBrillante = false;
 
 	}
 
@@ -34,6 +36,14 @@ public class Pokemon {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.isBrillante = isBrillante;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -86,8 +96,14 @@ public class Pokemon {
 
 	@Override
 	public String toString() {
-		return "Pokemon [nombre=" + this.nombre + ", precio=" + getPrecio() + ", numero=" + numero + ", isBrillante="
-				+ isBrillante + "]";
+		return "Pokemon [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", numero=" + numero
+				+ ", isBrillante=" + isBrillante + "]";
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Pokemon [nombre=" + this.nombre + ", precio=" + getPrecio() + ", numero=" + numero + ", isBrillante="
+//				+ isBrillante + "]";
+//	}
 
 }
