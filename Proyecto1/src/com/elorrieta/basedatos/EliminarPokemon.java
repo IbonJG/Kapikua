@@ -27,6 +27,7 @@ public class EliminarPokemon {
 			pst.setInt(1, id);
 
 			int filas = pst.executeUpdate(); // ejecuta la SQL contra la bbdd que nos hemos conectado
+
 			System.out.println("Hemos eliminado " + filas + " filas");
 
 		} catch (SQLException e) {

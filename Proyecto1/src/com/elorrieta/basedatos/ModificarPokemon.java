@@ -27,7 +27,7 @@ public class ModificarPokemon {
 			String numero = teclado.nextLine();
 			System.out.println("Introduce el nuevo precio");
 			float precio = Float.parseFloat(teclado.nextLine());
-			System.out.println("Introduce si es brillante o no");
+			System.out.println("Introduce si es brillante = 1 / o no es brillante = 0");
 			int brillante = Integer.parseInt(teclado.nextLine());
 
 			// sustituimos las '?' de la SQL por las variables
@@ -45,7 +45,9 @@ public class ModificarPokemon {
 					flag = false;
 					System.out.println("Datos cambiados");
 				} catch (Exception e) {
-					System.out.println("El numero introducido ya existe");
+					System.out.println("El numero introducido " + numero + " ya existe, escribe otro");
+					numero = teclado.nextLine();
+					pst.setString(2, numero);
 				}
 			} while (flag);
 
