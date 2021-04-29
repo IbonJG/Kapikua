@@ -29,7 +29,8 @@ public class Avion extends Vehiculo {
 
 	@Override
 	public String toString() {
-		return "Avion [numAlas=" + numAlas + "]";
+		return "Avion [numAlas=" + numAlas + ", Matricula=" + getMatricula() + ", Color=" + getColor()
+				+ ", NumAsientos=" + getNumAsientos() + ", NumRuedas=" + getNumRuedas() + "]";
 	}
 
 }

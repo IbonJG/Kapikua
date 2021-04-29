@@ -9,11 +9,20 @@ public class Coche extends Vehiculo {
 		this();
 		this.itv = itv;
 		this.nombre = nombre;
+		setMatricula(matricula);
+		setColor(color);
+		setNumAsientos(numAsientos);
+		setNumRuedas(numRuedas);
+
 	}
 
 	public Coche() {
-		super();
-		// TODO Auto-generated constructor stub
+		super(); // Llama al contructor por defecto de vehiculo
+		this.itv = true;
+		this.nombre = "Fabricando";
+		setNumRuedas(4);
+		setNumAsientos(2);
+
 	}
 
 	public Coche(String matricula, String color, int numAsientos, int numRuedas) {
@@ -22,8 +31,9 @@ public class Coche extends Vehiculo {
 	}
 
 	public Coche(String matricula) {
-		super(matricula);
-		// TODO Auto-generated constructor stub
+		// super(matricula);
+		this();
+		setMatricula(matricula);
 	}
 
 	public boolean isItv() {
@@ -45,7 +55,7 @@ public class Coche extends Vehiculo {
 	@Override
 	public String toString() {
 		return "Coche [itv= " + itv + ", nombre= " + nombre + ", Matricula= " + getMatricula() + ", Color= "
-				+ getColor() + ", NumAsientos= " + getNumAsientos() + ", NumRuedas() = " + getNumRuedas() + "]";
+				+ getColor() + ", NumAsientos= " + getNumAsientos() + ", NumRuedas= " + getNumRuedas() + "]";
 	}
 
 }

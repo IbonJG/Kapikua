@@ -5,21 +5,16 @@ public class CocheGasolina extends Coche {
 	private String combustible;
 	private int cilindrada;
 
+	public CocheGasolina() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public CocheGasolina(String matricula, String color, int numAsientos, int numRuedas, boolean itv, String nombre,
 			String combustible, int cilindrada) {
 		super(matricula, color, numAsientos, numRuedas, itv, nombre);
 		this.combustible = combustible;
 		this.cilindrada = cilindrada;
-	}
-
-	public CocheGasolina(String matricula, String color, int numAsientos, int numRuedas, boolean itv, String nombre) {
-		super(matricula, color, numAsientos, numRuedas, itv, nombre);
-		// TODO Auto-generated constructor stub
-	}
-
-	public CocheGasolina() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getCombustible() {
@@ -36,6 +31,12 @@ public class CocheGasolina extends Coche {
 
 	public void setCilindrada(int cilindrada) {
 		this.cilindrada = cilindrada;
+	}
+
+	@Override
+	public void arrancar() {
+
+		System.out.println("Este coche hace Brum Bruuuummmm");
 	}
 
 	@Override

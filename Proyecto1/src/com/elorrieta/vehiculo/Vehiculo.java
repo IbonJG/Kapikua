@@ -1,6 +1,6 @@
 package com.elorrieta.vehiculo;
 
-public class Vehiculo {
+public class Vehiculo implements IArrancable {
 
 	private String matricula;
 	private String color;
@@ -16,7 +16,7 @@ public class Vehiculo {
 		this.numRuedas = numRuedas;
 	}
 
-	// contructor from superclass
+	// contructor from superclass o contructor por defecto
 	public Vehiculo() {
 		super();
 		this.matricula = "1111AAA";
@@ -28,7 +28,7 @@ public class Vehiculo {
 	// contructor personalizado
 
 	public Vehiculo(String matricula) {
-		super();
+		this();
 		this.matricula = matricula;
 	}
 
@@ -70,6 +70,19 @@ public class Vehiculo {
 	public String toString() {
 		return "Vehiculo [matricula=" + matricula + ", color=" + color + ", numAsientos=" + numAsientos + ", numRuedas="
 				+ numRuedas + "]";
+	}
+
+	@Override
+	public void arrancar() {
+
+		System.out.println("Vehiculo arrancado");
+	}
+
+	@Override
+	public void parar() {
+
+		System.out.println("Vehiculo parado");
+
 	}
 
 }

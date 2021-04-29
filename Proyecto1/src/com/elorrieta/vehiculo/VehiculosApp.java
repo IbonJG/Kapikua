@@ -55,7 +55,37 @@ public class VehiculosApp {
 		cg2.setColor("Amarillo");
 		cg2.setNumAsientos(7);
 		cg2.setNumRuedas(4);
+		cg2.arrancar();
 		System.out.println(cg2);
+
+		// avion
+
+		Avion av1 = new Avion();
+		av1.setColor("Blanco");
+		av1.setMatricula("983457AA");
+		av1.setNumAsientos(250);
+		av1.setNumRuedas(6);
+		av1.setNumAlas(4);
+		System.out.println(av1);
+
+		Coche cAnder = new Coche();
+		System.out.println(cAnder);
+
+		CocheElectrico ceTesla = new CocheElectrico("Tesla", 2000);
+		System.out.println(ceTesla);
+		ceTesla.arrancar();
+
+		CocheGasolina cg7 = new CocheGasolina("7892KGZ", "Verde", 125, 8, true, "MicroBus", "Gasolina", 2500);
+		System.out.println(cg7);
+		cg7.arrancar();
+
+		Coche c9 = new Coche("6474fgd");
+		System.out.println(c9);
+		c9.arrancar();
+
+		Moto m1 = new Moto("789RT", "Negro", 2, 2, true, "Kawasaki", "Gasolina", 1500);
+		System.out.println(m1);
+		m1.arrancar();
 
 	}
 
