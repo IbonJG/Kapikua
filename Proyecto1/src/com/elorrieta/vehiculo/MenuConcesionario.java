@@ -12,6 +12,7 @@ public class MenuConcesionario {
 
 	public static void main(String[] args) {
 		System.out.println("Bienvenido");
+		System.out.println("Elige una opcion");
 		System.out.println("-------------------------------");
 
 		try {
@@ -244,6 +245,11 @@ public class MenuConcesionario {
 		stock.add(new Vehiculo("8475GHZ", "Rojo", 5, 4));
 		stock.add(new Vehiculo("1111TTT", "Negro", 5, 4));
 		stock.add(new Vehiculo("2222GGG", "Verde", 5, 4));
+		stock.add(new Vehiculo("3333CCC", "Verde", 2, 4));
+		// instertar datos con diferentes constructores
+		stock.add(new Vehiculo("6666JJJ", "Blanco"));
+		stock.add(new Vehiculo("7777ZZZ"));
+
 	}
 
 }
