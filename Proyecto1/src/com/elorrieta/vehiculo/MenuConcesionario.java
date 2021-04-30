@@ -47,6 +47,7 @@ public class MenuConcesionario {
 				}
 				default:
 					System.out.println(opcion + " esta opcion no esta disponible");
+					System.out.println("");
 					break;
 				}
 
@@ -79,28 +80,146 @@ public class MenuConcesionario {
 		// Pedir todos los datos de un Vehiculo
 		System.out.println("Introduce Matricula");
 		String nuevaMatricula = teclado.nextLine();
+
 		System.out.println("Introduce Color");
 		String nuevoColor = teclado.nextLine();
+
+		System.out.println("Introduce Numero de Asientos");
+		boolean errorAsientos = true;
+		int nuevoNumAsientos = 0;
+
+		do {
+			try {
+				nuevoNumAsientos = Integer.parseInt(teclado.nextLine());
+				errorAsientos = false;
+			} catch (Exception e) {
+				System.out.println("Debes introducer los asientos en formato numero");
+			}
+
+		} while (errorAsientos);
+
+		System.out.println("Introduce Nuemro de Ruedas");
+		boolean errorRuedas = true;
+		int nuevoNumRuedas = 0;
+
+		do {
+			try {
+				nuevoNumRuedas = Integer.parseInt(teclado.nextLine());
+				errorRuedas = false;
+			} catch (Exception e) {
+				System.out.println("Debes introducer las ruedas en formato numero");
+			}
+
+		} while (errorRuedas);
 
 		// crear obejto con esos datos
 		Vehiculo v = new Vehiculo();
 		v.setMatricula(nuevaMatricula);
 		v.setColor(nuevoColor);
+		v.setNumAsientos(nuevoNumAsientos);
+		v.setNumRuedas(nuevoNumRuedas);
+
 		// añadirlo en la coleccion 'stock'
 		stock.add(v);
-		// CUIDADO con las excepciones al parsear
+		System.out.println("***Nuevo Vehiculo añadido***");
+		System.out.println("");
 
 	}
 
 	private static void darDeBaja() {
-		// TODO Auto-generated method stub
+
+		System.out.println("Vamos a ELIMINAR un vehivulo");
+		System.out.println("----------------------------------");
+
+		System.out.println("Introduce la matricula del vehiculo que deseas eliminar");
+		String eliminarMatricula = teclado.nextLine();
+
+		boolean encontrado = false;
+		for (Vehiculo vehiculo : stock) {
+
+			if (eliminarMatricula.equals(vehiculo.getMatricula())) {
+				encontrado = true;
+				stock.remove(vehiculo);
+				System.out.println("***Vehiculo eliminado***");
+				System.out.println("");
+				break; // para el bucle en cuanto encuentra un objeto
+			}
+		} // for
+
+		if (!encontrado) {
+			System.out.println("Vehiculo no encontrado");
+			System.out.println("");
+		}
 
 	}
 
 	private static void modificar() {
-		// TODO Auto-generated method stub
 
-	}
+		Vehiculo modificarVehiculo = new Vehiculo();
+		boolean encontrado = false;
+
+		System.out.println("Vamos a MODIFICAR un vehivulo");
+		System.out.println("----------------------------------");
+
+		// buscar vehiculo por matricula
+		System.out.println("Introduce la matricula del vehiculo que deseas modificar");
+		String modificarMatricula = teclado.nextLine();
+
+		for (Vehiculo vehiculo : stock) {
+
+			if (modificarMatricula.equals(vehiculo.getMatricula())) {
+				encontrado = true;
+				modificarVehiculo = vehiculo;
+				break;
+			}
+		} // for
+
+		if (!encontrado) {
+			System.out.println("Vehiculo no encontrado");
+
+		} else {
+
+			// matricula
+			System.out.println("Introduce la nueva matricula");
+			String nuevaMatricula = teclado.nextLine();
+			modificarVehiculo.setMatricula(nuevaMatricula);
+
+			// color
+			System.out.println("Introduce nuevo color");
+			String nuevoColor = teclado.nextLine();
+			modificarVehiculo.setColor(nuevoColor);
+
+			// asientos
+			System.out.println("Introduce numero de asientos");
+			boolean errorAsientos = true;
+			do {
+				try {
+					modificarVehiculo.setNumAsientos(Integer.parseInt(teclado.nextLine()));
+					errorAsientos = false;
+				} catch (Exception e) {
+					System.out.println("Debes introducir los asientos en formato numero");
+				}
+
+			} while (errorAsientos);
+
+			// ruedas
+			System.out.println("Introduce numero de ruedas");
+			boolean errorRuedas = true;
+			do {
+				try {
+					modificarVehiculo.setNumRuedas(Integer.parseInt(teclado.nextLine()));
+					errorRuedas = false;
+				} catch (Exception e) {
+					System.out.println("Debes introducir las ruedas en formato numero");
+				}
+
+			} while (errorRuedas);
+
+			System.out.println("***DATOS MODIFICADOS***");
+			System.out.println("");
+		} // else: modificar
+
+	} // modificar
 
 	private static void menu() {
 
@@ -121,7 +240,10 @@ public class MenuConcesionario {
 
 	private static void cargarVehiculos() {
 
-		// mostar array
+		// para que el programa siempre tenga vehiculos con los que jugar
+		stock.add(new Vehiculo("8475GHZ", "Rojo", 5, 4));
+		stock.add(new Vehiculo("1111TTT", "Negro", 5, 4));
+		stock.add(new Vehiculo("2222GGG", "Verde", 5, 4));
 	}
 
 }

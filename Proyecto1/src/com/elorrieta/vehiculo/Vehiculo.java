@@ -32,6 +32,12 @@ public class Vehiculo implements IArrancable {
 		this.matricula = matricula;
 	}
 
+	public Vehiculo(String matricula, String color) {
+		super();
+		this.matricula = matricula;
+		this.color = color;
+	}
+
 	// geters and seters
 	public String getMatricula() {
 		return matricula;
