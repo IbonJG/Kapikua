@@ -94,12 +94,12 @@ public class MenuConcesionario {
 				nuevoNumAsientos = Integer.parseInt(teclado.nextLine());
 				errorAsientos = false;
 			} catch (Exception e) {
-				System.out.println("Debes introducer los asientos en formato numero");
+				System.out.println("Debes introducir los asientos en formato numero");
 			}
 
 		} while (errorAsientos);
 
-		System.out.println("Introduce Nuemro de Ruedas");
+		System.out.println("Introduce Numero de Ruedas");
 		boolean errorRuedas = true;
 		int nuevoNumRuedas = 0;
 
@@ -108,7 +108,7 @@ public class MenuConcesionario {
 				nuevoNumRuedas = Integer.parseInt(teclado.nextLine());
 				errorRuedas = false;
 			} catch (Exception e) {
-				System.out.println("Debes introducer las ruedas en formato numero");
+				System.out.println("Debes introducir las ruedas en formato numero");
 			}
 
 		} while (errorRuedas);
