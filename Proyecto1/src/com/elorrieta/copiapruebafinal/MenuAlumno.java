@@ -67,6 +67,7 @@ public class MenuAlumno {
 		a.setApellidos("Juarrero Garcia");
 		a.setEdad(34);
 		a.setEnfermo(false);
+		//cargar asignaturas
 		a.setAsignatura(as1);
 		a.setAsignatura(as2);
 		a.setAsignatura(as3);
@@ -186,6 +187,7 @@ public class MenuAlumno {
 				try {
 					System.out.println("Introduce nombre de la asignatura");
 					String nombreAsignatura = teclado.nextLine();
+					asignaturasMatriculado.setNombre(nombreAsignatura);
 
 				} catch (Exception e) {
 					System.out.println("Nota incorrecta");
@@ -193,7 +195,8 @@ public class MenuAlumno {
 
 				System.out.println("Introduce la Nota");
 				float notaAsignatura = Float.parseFloat(teclado.nextLine());
-
+				asignaturasMatriculado.setNota(notaAsignatura);
+				
 			} while (!"s".equalsIgnoreCase(salirAsignatura));
 
 		} while (!"s".equalsIgnoreCase(salirAsignatura));
@@ -204,8 +207,9 @@ public class MenuAlumno {
 		a.setApellidos(apellidos);
 		a.setEdad(edad);
 		a.setEnfermo(isEnfermo);
-		// a.setNotamedia(notamedia);
+		//a.setNotamedia(notamedia);
 		a.setAsignatura(asignaturasMatriculado);
+		
 
 		// añadir los datos al arraylist
 		lista.add(a);
